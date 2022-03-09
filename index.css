@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: skyblue;
+}
+
+.container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin:100px auto;
+  overflow: hidden;
+}
+
+.container .wrap {
+  position: absolute;
+  height: 100%;
+  left: -600px;
+}
+
+.container .wrap img {
+  float: left;
+  width: 600px;
+  height: 100%;
+}
+
+.container .dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container .dots li {
+  display: inline-block;
+  margin: 2px;
+  width: 20px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #fff;
+  opacity: .3;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.container .dots li.on{
+  opacity: .8;
+  width: 23px;
+}
+
+.container .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding:8px 14px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .1);
+  color: #ccc;
+  border: none;
+  display: none;
+  cursor: pointer;
+  transition: all .5s;
+  opacity: 0;
+}
+
+.container .arrow_left {
+  left: 15px;
+}
+
+.container .arrow_right {
+  right: 15px;
+}
+
+.container:hover .arrow {
+  display: block;
+  animation-name: slide-in;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+.container .arrow:hover {
+  background-color: rgba(0,0,0,0.2);
+}
